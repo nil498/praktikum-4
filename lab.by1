@@ -1,0 +1,27 @@
+data_mahasiswa = []
+
+print("=== INPUT DATA 2 MAHASISWA ===")
+
+for i in range(2):
+    print(f"\nData mahasiswa ke-{i+1}")
+    nama = input("Nama mahasiswa : ")
+    tugas = float(input("Nilai Tugas : "))
+    uts = float(input("Nilai UTS : "))
+    uas = float(input("Nilai UAS : "))
+
+    # Hitung nilai akhir
+    nilai_akhir = (tugas * 0.30) + (uts * 0.35) + (uas * 0.35)
+
+    # Simpan ke list
+    data_mahasiswa.append({
+        "nama": nama,
+        "tugas": tugas,
+        "uts": uts,
+        "uas": uas,
+        "nilai akhir": nilai_akhir
+    })
+
+# Tampilkan hasil akhir
+print("\n=== DAFTAR NILAI MAHASISWA ===")
+for i, mhs in enumerate(data_mahasiswa, start=1):
+    print(f"{i}. {mhs['nama']} - Nilai Akhir: {mhs['nilai akhir']:.2f}")
